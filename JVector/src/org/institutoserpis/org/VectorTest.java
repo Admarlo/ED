@@ -21,7 +21,12 @@ public class VectorTest {
 		assertEquals(-1,Vector.indexOf(new int[]{},123));
 	}
 	
-	
+	@Test
+	public void min(){
+		assertEquals(3,Vector.min(new int[]{3,15,7,9,12}));
+		//assertEquals(7,Vector.min(new int[]{32,15,7,9,12}));
+		//assertEquals(2,Vector.min(new int[]{32,15,7,9,2}));
+	}
 //	public void indexOf() {
 //		
 //
