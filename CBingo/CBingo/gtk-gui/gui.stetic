@@ -14,7 +14,7 @@
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="Gtk.VBox" id="vbox4">
+      <widget class="Gtk.VBox" id="vBoxMain">
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
