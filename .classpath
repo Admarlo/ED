@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Jadivina/src"/>
+	<classpathentry kind="src" path="JAdivina/src"/>
+	<classpathentry kind="src" path="JHolaMundo/src"/>
+	<classpathentry kind="src" path="JSuma/src"/>
+	<classpathentry kind="src" path="JVector/src"/>
+	<classpathentry kind="src" path="MyFirstApp/app/build/generated/source/buildConfig/androidTest/debug"/>
+	<classpathentry kind="src" path="MyFirstApp/app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="MyFirstApp/app/build/generated/source/r/androidTest/debug"/>
+	<classpathentry kind="src" path="MyFirstApp/app/build/generated/source/r/debug"/>
+	<classpathentry kind="src" path="MyFirstApp/app/src/androidTest/java"/>
+	<classpathentry kind="src" path="MyFirstApp/app/src/main/java"/>
+	<classpathentry kind="src" path="MyFirstApp/app/src/test/java"/>
+	<classpathentry kind="lib" path="MyFirstApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"/>
+	<classpathentry kind="lib" path="MyFirstApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"/>
+	<classpathentry kind="lib" path="MyFirstApp/build/generated/mockable-android-25.jar"/>
+	<classpathentry kind="lib" path="MyFirstApp/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="JSuma/bin"/>
+</classpath>
