@@ -31,14 +31,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContext=this;
+        mContext = this;
 
-        mTVTime= (TextView) findViewById(R.id.tv_time);
-        mEtLaps=(EditText) findViewById(R.id.et_laps);
-        mSvLaps=(ScrollView) findViewById(R.id.sv_laps);
-        mBtnStart=(Button) findViewById(R.id.Btn_Start);
-        mBtnLap= (Button) findViewById(R.id.btn_lap);
+        mTVTime = (TextView) findViewById(R.id.tv_time);
+        mEtLaps = (EditText) findViewById(R.id.et_laps);
+        mSvLaps = (ScrollView) findViewById(R.id.sv_laps);
+        mSvLaps = (ScrollView) findViewById(R.id.sv_laps);
+        mBtnStart = (Button) findViewById(R.id.Btn_Start);
+        mBtnLap = (Button) findViewById(R.id.btn_lap);
         mBtnStop= (Button) findViewById(R.id.btn_stop);
+
+        mEtLaps.setEnabled(false);
 
         mBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 //mTVTime.setText("Boton Start");
                 if(mChronometer==null){
                     mChronometer=new Chronometer(mContext);
-                    mThreadChrono=new Thread(mChronometer);
+                    mThreadChrono=new Thread(Cronometro);
                     mThreadChrono.start();
                     mChronometer.start();
 
@@ -70,6 +73,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBtnLap.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                if(mChronometer==null){
+                    return;
+                }
+
+                mEtLaps.append("Vuelta "+String.valueOf(mLaps)+" "
+                        +String.valueOf(mTVTime.getText())+"\n");
+
+                mLaps++;
+
+                mSvLaps.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mSvLaps.smoothScrollTo(0,mEtLaps.getBottom());
+                    }
+                });
+
+            }
+        });
+
+
+
     }
     public void updateTimerText(final String time){
         runOnUiThread(new Runnable(){
@@ -79,25 +107,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBtnLap.setOnClickListener(new View.OnClickListener(){
-             @Override
-            public void onClick(View v){
 
-                 if(mChronometer==null){
-                     return;
-                 }
-
-                 mEtLaps.append("Vuelta "+String.valueOf(mLaps)+" "
-                         +String.valueOf(mTVTime)+"\n");
-
-                 mSvLaps.post(new Runnable() {
-                     @Override
-                     public void run() {
-                         mSvLaps.smoothScrollTo(0,mEtLaps.getBottom());
-                     }
-                 });
-
-             }
-        });
     }
 }
